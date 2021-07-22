@@ -1,0 +1,71 @@
+<section id="contentsInner" class="STANDARD">
+    <div id="contents" class="vue-app content_area parentCon">
+        <!-- header를 숨길 수 있는 긴 blue bar -->
+        <kendo-splitter :orientation="'vertical'"
+                        :panes="[ { size: '40px', collapsible: true, resizable: false }, {} ]"
+                        style="height:100%"
+                        @resize="doResize">
+
+            <div>
+                <!-- header -->
+                <fieldset>
+                    <!-- css 참고 -->
+                    <div class="parentCon">
+                        <!-- 플랜트 정의 -->
+                        <div class="leftCon">
+                            <span v-t="lPlant" class="kd_labelWrap" style="font-size: 10px; width: 50px; text-align: right; padding-right: 5px;"></span>
+                            <input id="plant_name" v-model="mPlantName" class="k-textbox" style="width:120px;"/>
+                        </div>
+                        <!-- 조회 버튼 정의 -->
+                        <div class="leftCon">
+                            <kendo-button ref="btnSearch"
+                                          v-t="tSearch"
+                                          @click="loadGrd1">
+                            </kendo-button>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <!-- result -->
+            <div class="result_area">
+                    <div style="margin-top: 5px; height: 99%;">
+
+                        <!-- leftcon과 rightcon 공간 및 여백 제공 -->
+                        <div class="parentCon" style="height: 30px; margin-left: 5px; margin-right: 5px;">
+
+                            <!-- download 버튼 -->
+                            <div class="leftCon">
+                                <excel-export ref="exportGrd1" id="exportGrd1" v-bind="exportGrd1"></excel-export>
+                            </div>
+
+                            <div class="rightCon">
+                                <!-- 행 추가 버튼 -->
+                                <kendo-button @click="insertRowGrd1">
+                                    <i class="fa fa-lg fa-plus"></i>
+                                </kendo-button>
+
+                                <!-- 행 삭제 버튼 -->
+                                <kendo-button @click="deleteRowGrd1">
+                                    <i class="fa fa-lg fa-minus"></i>
+                                </kendo-button>
+
+                                <!-- grid 저장 버튼 -->
+                                <kendo-button ref="btnSaveGrd1"
+                                              v-t="tSave"
+                                              @click="saveGrd1">
+                                </kendo-button>
+                            </div>
+                        </div>
+
+                        <!-- grd가 그려지는 장소 -->
+                        <div style="height: calc(100% - 35px); margin-left: 5px; margin-right: 0;">
+                            <excel-export ref="exportGrd1" id="exportGrd1" v-bind="exportGrd1" style="display: none;"></excel-export>
+                            <div id="grd1" style="height: 100%;"></div>
+                        </div>
+                        
+                    </div>
+            </div>
+        </kendo-splitter>
+    </div>
+</section>

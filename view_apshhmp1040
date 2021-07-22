@@ -1,0 +1,10 @@
+<view id="APS_HHMP1040M" include="vue"
+          template="HSHI/HHMP/HHMP_1000/APS_HHMP1040M/APS_HHMP1040M
+          :HSHI/HHMP/HHMP_1000/APS_HHMP1040M/APS_HHMP1040M_JS
+          :HSHI/HHMP/HHMP_1000/APS_HHMP1040M/APS_HHMP1040M_CSS
+          :HSHI/COMMON/UI_HSHI_COMMON_CSS
+          :HSHI/COMMON/UI_HSHI_UTIL_JS"
+          copyfrom="COMM_VIEW_META" version="1.2">
+        <publish parent="HHMP_1000" open="true" seq="30"/>
+    </view>
+    
